@@ -38,6 +38,43 @@ picture {
   display: block;
   max-width: 100%;
 }
+/* start back-to-top */
+#back-to-top {
+  display: inline-block;
+  background-color: #ff6600;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#back-to-top::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#back-to-top:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#back-to-top:active {
+  background-color: #555;
+}
+#back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+/* end back-to-top */
 /* start header */
 header {
   background-image: linear-gradient(to right, #ff6600, hsl(30deg 100% 1% / 20%)),
@@ -277,3 +314,28 @@ p {
   margin-bottom: 15px;
   font-size: 20px;
 }
+
+/* start container */
+.news__content {
+  text-align: center;
+}
+.news__table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 37px;
+}
+.news__table--content {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.news__content h3 {
+  padding-right: 0;
+}
+.news__table--content {
+  cursor: pointer;
+}
+.news__table--content img:hover {
+  opacity: 0.85;
+  transition: all 0.4s;
+}
+/* end container */
